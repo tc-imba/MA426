@@ -13,7 +13,7 @@
 \DeclareMathOperator*{\suplim}{\overline{\lim}}
 \DeclareMathOperator*{\inflim}{\underline{\lim}}
 
-\title{MA426 DIFFERENTIAL GEOMETRY HOMEWORK 1}
+\title{MA426 DIFFERENTIAL GEOMETRY HOMEWORK 2}
 \author{刘逸灏 515370910207}
 \date{\today}
 
@@ -21,79 +21,55 @@
 \maketitle
 
 \section{}
-Suppose the angular velocity of the disk is $\omega$, let the straight line be the $x$ axis and suppose that the center of disk is $(0,a)$ and M is at $(a,a)$ in the initial state. Then
-$$\alpha(t)=(a\omega t+a\cos\omega t,a+a\sin\omega t)$$
+$$r=(x,y,z)=(x,y,f(x,y))$$
+$$r_x=(1,0,f_x(x,y))$$
+$$r_y=(0,1,f_y(x,y))$$
+$$r_x\land r_y=(-f_x,-f_y,1)$$
+$$|r_x\land r_y|=\sqrt{1+f_x^2+f_y^2}$$
+$$A=\iint_\Omega|r_x\land r_y|dxdy=\iint_\Omega\sqrt{1+f_x^2+f_y^2}dxdy$$
 
 \section{}
-$$x=e^t,y=e^{-t},z=t\sqrt{2}$$
-\begin{align*}
-\kappa(t)&=\frac{\sqrt{(z''y'-y''z')^2+(x''z'-z''x')^2+(y''x'-x''y')^2}}{\sqrt{x'^2+y'^2+z'^2}^3}\\
-&=\frac{\sqrt{2e^{-2t}+2e^{2t}+4}}{\sqrt{e^{2t}+e^{-2t}+2}^3}
-=\frac{\sqrt{2}}{(e^t+e^{-t})^2}
-\end{align*}
-\begin{align*}
-\tau(t)&=-\frac{x'''(z''y'-y''z')+y'''(x''z'-z''x')+z'''(y''x'-x''y')}{(z''y'-y''z')^2+(x''z'-z''x')^2+(y''x'-x''y')^2}\\
-&=-\frac{-\sqrt{2}-\sqrt{2}}{2e^{-2t}+2e^{2t}+4}
-=\frac{\sqrt{2}}{(e^t+e^{-t})^2}
-\end{align*}
+For any constant $v$, the length curve $(u_1,u_2)\to R^3$ given by $X(u,v)$ is equal, let the length be $k_v$, then
+$$\int_{u_1}^{u_2}\sqrt{E(u,v)}du=k_v$$
 
-$$x=\cos^3t,y=\sin^3t,z=\cos2t$$
-\begin{align*}
-\kappa(t)&=\frac{\sqrt{(z''y'-y''z')^2+(x''z'-z''x')^2+(y''x'-x''y')^2}}{\sqrt{x'^2+y'^2+z'^2}^3}\\
-&=\frac{15\sin^2t(1-\sin^2t)}{(\frac{5}{2}\sin2t)^3}=\frac{3}{25\sin t\cos t}
-\end{align*}
-\begin{align*}
-\tau(t)&=-\frac{x'''(z''y'-y''z')+y'''(x''z'-z''x')+z'''(y''x'-x''y')}{(z''y'-y''z')^2+(x''z'-z''x')^2+(y''x'-x''y')^2}\\
-&=-\frac{\frac{9}{2}\sin^32t}{[15\sin^2t(1-\sin^2t)]^2}=-\frac{4}{25\sin t\cos t}
-\end{align*}
+Take partial difference of $v$ on both sides, we can get
+$$\int_{u_1}^{u_2}\frac{\partial\sqrt{E(u,v)}}{\partial v}du=0$$
+
+Since $$\frac{\partial\sqrt{E(u,v)}}{\partial v}\geqslant0$$
+$$\frac{\partial E}{\partial v}=0$$
+
+For any constant $u$, the length curve $(v_1,v_2)\to R^3$ given by $X(u,v)$ is also equal, similarly, we can get
+$$\frac{\partial G}{\partial u}=0$$
 
 \section{}
-$$k(t)=\frac{x'y''-y'x''}{\sqrt{x'^2+y'^2}^3}=\frac{\cosh t}{\sqrt{1+\sinh^2t}^3}=\frac{1}{\cosh^2t}$$
+$$r=(x,y,z)=(x,y,x^3)$$
+$$r_x=(1,0,3x^2),r_y=(0,1,0)$$
+$$E=r_x\cdot r_x=1+9x^4,F=r_x\cdot r_y=0,G=r_y\cdot r_y=1$$
+$$n=\frac{r_x\land r_y}{|r_x\land r_y|}=\frac{(-3x^2,0,1)}{\sqrt{1+9x^4}}$$
+$$r_{xx}=0,0,6x,r_{xy}=(0,0,0),r_{yy}=(0,0,0)$$
+$$L=r_{xx}\cdot n=\frac{6x}{\sqrt{1+9x^4}},M=r_{xy}\cdot n=0,N=r_{yy}\cdot n=0$$
+
+The mean curvature is
+$$H=\frac{LG-2MF+NE}{2(EG-F^2)}=\frac{L}{2E}=\frac{3x}{(1+9x^4)^{1.5}}$$
+
+The Gauss curvature is
+$$K=\frac{LN-M^2}{EG-F^2}=0$$
 
 \section{}
-Let $t(s)$ be the unit tangent vector and $n(s)$ be the unit normal vector, from definition we know $t'(s)=k(s)n(s)=\dfrac{d\alpha/dt}{ds/dt}$, then
-$$\alpha'=\frac{ds}{dt}t(s)$$
-Differentiate both sides by $t$ and substitute $t'(s)$ by $k(s)n(s)$
-$$\alpha''=\frac{d^2s}{dt^2}t(s)+\frac{ds}{dt}t'(s)=\frac{d^2s}{dt^2}t(s)+\frac{ds}{dt}k(s)n(s)$$
-Multiple both sides by $t(s)$ as vector product
-$$t(s)\land\alpha''=\frac{d^2s}{dt^2}[t(s)\land t(s)]+\frac{ds}{dt}k(s)[t(s)\land n(s)]$$
-Taking norms of both sides
-$$\left|\frac{d\alpha}{dt}\frac{dt}{ds}\land\alpha''\right|=0+\left|\left(\frac{ds}{dt}\right)^2k(t)\right|$$
-Therefore
-$$k(t)=\frac{|\alpha'\land\alpha''|}{|\alpha'|^3}$$
+$$r=(t,v,X)=(t,v,\alpha(t)+v\omega(t))$$
+$$r_t=(1,0,\alpha'(t)+v\omega'(t)),r_v=(0,1,\omega(t))$$
+$$E=r_t\cdot r_t=1+[\alpha'(t)+v\omega'(t)]^2,F=r_t\cdot r_v=\omega(t)[\alpha'(t)+v\omega'(t)],G=r_v\cdot r_v=1+\omega^2(t)$$
+$$n=\frac{r_t\land r_v}{|r_t\land r_v|}=\frac{(-[\alpha'(t)+v\omega'(t)],-\omega(t),1)}{\sqrt{1+\omega^2(t)+[\alpha'(t)+v\omega'(t)]^2}}$$
+$$r_{tt}=(0,0,\alpha''(t)+v\omega''(t)),r_{tv}=(0,0,\omega'(t)),r_{vv}=(0,0,0)$$
+$$L=r_{tt}\cdot n=\frac{\alpha''(t)+v\omega''(t)}{\sqrt{1+\omega^2(t)+[\alpha'(t)+v\omega'(t)]^2}},M=r_{tv}\cdot n=\frac{\omega'(t)}{\sqrt{1+\omega^2(t)+[\alpha'(t)+v\omega'(t)]^2}},N=r_{vv}\cdot n=(0,0,0)$$
 
-And let $t(t)=\dfrac{\alpha'}{|\alpha'|}$, then
-$$n(t)=\frac{t'(t)}{|t'(t)|}=\frac{\alpha'\land(\alpha''\land\alpha')}{|\alpha'\land(\alpha''\land\alpha')|}$$
-$$b(t)=t(t)\land n(t)=\frac{\alpha'\land \alpha''}{|\alpha'\land\alpha'')|}$$
+Let $$a=\alpha'(t)+v\omega'(t),b=\omega(t)$$
 
-According to Frenet-Serret formulas,
-$$b'(t)=-|\alpha'|\tau n(t)$$
-$$\tau=-\frac{(\alpha'\land \alpha'')\cdot \alpha'''}{|\alpha'\land\alpha''|^2}$$
+The Gauss curvature is
+$$K=\frac{LN-M^2}{EG-F^2}=\frac{-M^2}{EG-F^2}=-\frac{[\omega'(t)]^2}{(1+a^2+b^2)[(1+a^2)(1+b^2)-a^2b^2]}=-\frac{[\omega'(t)]^2}{\{1+[\alpha'(t)+v\omega'(t)]^2+\omega^2(t)\}^2}$$
 
 \section{}
-$$k(t)=\frac{x'y''-y'x''}{\sqrt{x'^2+y'^2}^3}=\frac{ab\sin^2t+ab\cos^2t}{\sqrt{a^2\sin^2t+b^2\cos^2t}^3}=ab(a^2\sin^2t+b^2\cos^2t)^{-3/2}$$
-$$k'(t)=ab(2a^2\sin t\cos t-2b^2\sin t\cos t)\cdot-\frac{3}{2}(a^2\sin^2t+b^2\cos^2t)^{-5/2}=0$$
-
-Since it is an ellipse, we know that $ab\neq0,a^2-b^2\neq0$, and
-$$a^2\sin^2t+b^2\cos^2t>\min\{a^2,b^2\}>0$$
-
-So $$\sin t\cos t=0$$
-$$t=2k\pi,\frac{(4k+1)\pi}{2},(2k+1)\pi,\frac{(4k+3)\pi}{2}\quad k\in Z$$
-
-There are exactly four vertices, they are at $(a,0)$, $(0,b)$, $(-a,0)$ and $(0,-b)$.
-
-\section{}
-$$\beta'(s)=\alpha'(s)-rn'(s)=(1+r\kappa_\alpha)\alpha'(s)$$
-$$l(\beta)=\int_0^{l(\alpha)}(1+r\kappa_\alpha)ds=l(\alpha)+\int_0^{l(\alpha)}\kappa_\alpha ds=l(\alpha)+2\pi r$$
-
-\begin{align*}
-A(\beta)&=\frac{1}{2}\int_0^l|\beta(s)\land \beta'(s)|ds\\
-&=\frac{1}{2}\int_0^l|(\alpha(s)-rn(s))(\alpha'(s)-rn'(s))|ds\\
-&=\frac{1}{2}\int_0^l|\alpha(s)\land \alpha'(s)|ds+r\int_0^l|b(s)|ds+r^2\int_0^l\kappa_\alpha ds\\
-&=A(\alpha)+rl+\pi r^2
-\end{align*}
-
-$$|\beta'(s)|=1+r\kappa_\alpha(s)$$
-$$\kappa_\beta(s)=\left|\frac{d}{d\beta}n(s)\right|=\left|\frac{d}{ds}n(s)\frac{ds}{d\beta}\right|=\frac{\kappa_\alpha}{1+r\kappa_\alpha(s)}$$
+Let $z=\phi(s)$,
+$$r(x,y,z)=(\phi(s)\cos\theta,\phi(s)\sin\theta,\phi(s))$$
 
 \end{document}

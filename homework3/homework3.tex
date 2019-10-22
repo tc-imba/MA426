@@ -1,0 +1,33 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma426}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{3}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section*{定理 2.7.4}
+\begin{problem}
+  设正则参数曲线$C$的参数方程是$\mathbf{r}(s)$, $s$是弧长参数, 则$C$的渐缩线的参数方程是
+  $$\mathbf{r}=\mathbf{r}(s)+\frac{1}{\kappa(s)}\boldsymbol\beta(s)-\frac{1}{\kappa(s)}\left(\tan\int\tau(s)ds\right)\boldsymbol\gamma(s).$$
+\end{problem}
+
+设$$\mathbf{r}_1(s)=\mathbf{r}(s)+\lambda(s)\boldsymbol\beta(s)+\mu(s)\boldsymbol\gamma(s)$$是曲线的渐缩线, 则$$\lambda(s)\boldsymbol\beta(s)+\mu(s)\boldsymbol\gamma(s)$$是曲线$\mathbf{r}_1(s)$的切向量, 对$\mathbf{r}_1(s)$求导可得
+$$\mathbf{r}_1'(s)=\mathbf{r}'(s)+\lambda'(s)\boldsymbol\beta(s)+\lambda(s)\boldsymbol\beta'(s)+\mu'(s)\boldsymbol\gamma(s)+\mu(s)\boldsymbol\gamma'(s).$$
+
+代入Frenet公式
+$$\mathbf{r}'(s)=\boldsymbol\alpha(s),\quad \boldsymbol\beta'(s)=-\kappa(s)\boldsymbol\alpha(s)+\tau(s)\boldsymbol\gamma(s),\quad \boldsymbol\gamma'(s)=-\tau(s)\boldsymbol\beta(s)$$
+可得
+$$\mathbf{r}_1'(s)=[1-\lambda(s)\kappa(s)]\boldsymbol\alpha(s)+[\lambda'(s)-\mu(s)\tau(s)]\boldsymbol\beta(s)+[\mu'(s)+\lambda(s)\tau(s)]\boldsymbol\gamma(s).$$
+由$\mathbf{r}_1'(s)$和$\mathbf{r}_1(s)$的切向量平行可知
+$$1-\lambda(s)\kappa(s)=0,\quad \frac{\lambda(s)}{\lambda'(s)-\mu(s)\tau(s)}=\frac{\mu(s)}{\mu'(s)+\lambda(s)\tau(s)},$$
+$$(\lambda^2(s)+\mu^2(s))\tau(s)=\lambda'(s)\mu(s)-\mu'(s)\lambda(s),$$
+$$\tau(s)=-\frac{\mu'(s)\lambda(s)-\lambda'(s)\mu(s)}{\lambda^2(s)+\mu^2(s)}=-\frac{d}{ds}\arctan\frac{\mu(s)}{\lambda(s)},$$
+$$\arctan\frac{\mu(s)}{\lambda(s)}=-\int\tau(s)ds$$
+
+故
+$$\lambda(s)=\frac{1}{\kappa(s)},\quad \mu(s)=-\lambda(s)\tan\int\tau(s)ds=-\frac{1}{\kappa(s)}\left(\tan\int\tau(s)ds\right).$$
+
+\end{document}

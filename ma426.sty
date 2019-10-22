@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{ma362}[2019/03/01 ve401 documents]
+\ProvidesPackage{ma462}[2019/03/01 ve401 documents]
 
 % gemoetry and spacing
 \RequirePackage[margin=2.25cm]{geometry}
@@ -28,7 +28,7 @@
 
 % misc
 \RequirePackage{booktabs,multirow,multicol,varwidth}
-\RequirePackage{enumitem}
+\RequirePackage[shortlabels]{enumitem}
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{physics}
 
@@ -95,6 +95,9 @@
 \blockinfo{}
 
 %\instructor{\href{mailto:horst@sjtu.edu.cn}{Horst Hohberger}}
-
+\newenvironment{problem}{\begin{tcolorbox}[colback=black!4!white,colframe=white!50!black]
+}{\end{tcolorbox}}
+\setlist[enumerate,1]{label=(\arabic*), ref=\arabic*}
+\allowdisplaybreaks[4]
 
 \endinput

@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{indentfirst}
+\geometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=4.0cm}
+\usepackage{ctex}
+\renewcommand\thesection{Ex \arabic{section}.}
+\DeclareMathOperator*{\suplim}{\overline{\lim}}
+\DeclareMathOperator*{\inflim}{\underline{\lim}}
+
+\title{MA426 DIFFERENTIAL GEOMETRY HOMEWORK 3}
+\author{刘逸灏 515370910207}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{}
+Let $d_1\cdot d_2=0$, and $|d_1|=|d_2|=1$ to be the direction vectors, then
+$$d_1=(\cos\theta,\sin\theta),d_2=(\sin\theta,-\cos\theta)$$
+
+Let the principle curvatures are $k_1$ and $k_2$, the normal curvatures are
+$$\kappa_1=k_1\cos^2\theta+k_2\sin^2\theta$$
+$$\kappa_2=k_1\sin^2\theta+k_2\cos^2\theta$$
+
+So the sum of normal curvatures is
+$$\kappa_1+\kappa_2=k_1+k_2$$
+
+which is a constant.
+
+\section{}
+$$(x^2+y^2-2)^2+z^2=1$$
+$$z=\sin\theta,x^2+y^2-2=\cos\theta$$
+$$x=(2+\cos\theta)\cos\gamma,y=(2+\cos\theta)\sin\gamma$$
+
+Let $u=\theta,v=\gamma$,
+$$r=((2+\cos u)\cos v,(2+\cos u)\sin v,\sin u)$$
+$$r_u=(-\sin u\cos v,-\sin u\sin v,\cos u)$$
+$$r_v=(-(2+\cos u)\sin v,(2+\cos u)\cos v,0)$$
+$$E=r_u\cdot r_u=1,F=r_u\cdot r_v=0,G=r_u\cdot r_v=(2+\cos u)^2$$
+$$r_{uu}=(-\cos u\cos v,-\cos u\sin v,-\sin u)$$
+$$r_{vv}=(-\cos u\cos v,(\cos u+2)\sin v,0)$$
+$$L=-1,M=0,N=-(2+\cos u)\cos u$$
+
+$$H=\frac{LG-2MF+NE}{2(EG-F^2)}=\frac{-G+N}{2G}=-\frac{1+\cos u}{2+\cos u}$$
+$$dA=(2+\cos u)dudv$$
+$$\int_S H^2dA=\int_0^{2\pi}\int_0^{2\pi}\frac{(1+\cos u)^2}{2+\cos u}dudv=\frac{4\sqrt{3}\pi^2}{3}$$
+
+\section{}
+
+
+\end{document}

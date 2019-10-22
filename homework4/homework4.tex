@@ -1,0 +1,49 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma426}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{4}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section{3.1/4}
+\begin{problem}
+  求由圆螺旋线的主法线所构成的曲面的参数方程. 这是一张什么曲线?
+\end{problem}
+
+设圆螺旋线的方程为
+$$\mathbf{r}(t)=(a\cos t,a\sin t,bt).$$
+则主法线所构成的曲面的参数方程为
+$$\mathbf{r}(t,u)=((a+u)\cos t,(a+u)\sin t,bt).$$
+显然这是一张正螺旋面.
+
+\section{3.2/5}
+\begin{problem}
+  设$S$是圆锥面$\mathbf{r}=(v\cos u,v\sin u, v)$, $C$是$S$上的一条曲线, 其方程是$u=\sqrt{2}t,v=e^t$.
+  \begin{enumerate}
+    \item 将曲线$C$的切向量用$\mathbf{r}_u$, $\mathbf{r}_v$的线性组合表示出来;
+    \item 证明: $C$的切向量平分了$\mathbf{r}_u$和$\mathbf{r}_v$的夹角.
+  \end{enumerate}
+\end{problem}
+
+\subsection*{(1)}
+$C$的参数方程和切向量为
+$$\mathbf{r}_c(t)=(e^t\cos\sqrt{2}t,e^t\sin\sqrt{2}t,e^t),$$
+$$\mathbf{r}'_c(t)=(e^t(\cos\sqrt{2}t-\sqrt{2}\sin\sqrt{2}t),e^t(\sin\sqrt{2}t+\sqrt{2}\cos\sqrt{2}t,e^t).$$
+代入$\mathbf{r}_u$, $\mathbf{r}_v$可得
+$$\mathbf{r}_u(t)=\mathbf{r}_u(u,v)=(-v\sin u,v\cos u,0),\quad\mathbf{r}_v(t)=\mathbf{r}_v(u,v)=(\cos u,\sin u,1)$$
+$$\mathbf{r}_u(\sqrt{2}t,e^t)=(-e^t\sin\sqrt{2}t),e^t\cos\sqrt{2}t,0),\quad \mathbf{r}_v(\sqrt{2}t,e^t)=(\cos\sqrt{2}t,\sin\sqrt{2}t,1),$$
+$$\mathbf{r}'_c(t)=\sqrt{2}\mathbf{r}_u(t)+e^t\mathbf{r}_v(t).$$
+
+\subsection*{(2)}
+$$|\mathbf{r}_u(t)|=e^t,\quad|\mathbf{r}_v(t)|=\sqrt{2},$$
+$$|\mathbf{r}'_c(t)|=\sqrt{2\mathbf{r}^2_u(t)+e^{2t}\mathbf{r}^2_v(t)}=2e^t.$$
+
+代入夹角公式得
+$$\angle(\mathbf{r}'_c(t),\mathbf{r}_u(t))=\arccos\frac{\mathbf{r}'_c(t)\cdot\mathbf{r}_u(t)}{|\mathbf{r}'_c(t)||\mathbf{r}_u(t)|}=\arccos\frac{\sqrt{2}|\mathbf{r}_u(t)|^2}{|\mathbf{r}'_c(t)||\mathbf{r}_u(t)|}=\arccos\frac{\sqrt{2}e^{2t}}{2e^{2t}}=\frac{\pi}{4},$$
+$$\angle(\mathbf{r}'_c(t),\mathbf{r}_v(t))=\arccos\frac{\mathbf{r}'_c(t)\cdot\mathbf{r}_v(t)}{|\mathbf{r}'_c(t)||\mathbf{r}_v(t)|}=\arccos\frac{e^t|\mathbf{r}_v(t)|^2}{|\mathbf{r}'_c(t)||\mathbf{r}_v(t)|}=\arccos\frac{2e^t}{2\sqrt{2}e^t}=\frac{\pi}{4}.$$
+故$C$的切向量平分了$\mathbf{r}_u$和$\mathbf{r}_v$的夹角.
+
+\end{document}

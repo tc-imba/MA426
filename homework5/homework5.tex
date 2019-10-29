@@ -1,0 +1,44 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma426}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{5}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section*{3.3 例一}
+\begin{problem}
+  求旋转面的第一基本形式.
+\end{problem}
+
+旋转面的参数方程是
+$$\mathbf{r}(u,v)=(f(v)\cos u,f(v)\sin u,g(v)), \quad f(v)>0.$$
+故
+$$\mathbf{r}_u(u,v)=(-f(v)\sin u,f(v)\cos u,0),$$
+$$\mathbf{r}_v(u,v)=(f'(v)\cos u,f'(v)\sin u,g'(v)),$$
+$$E(u,v)=\mathbf{r}_u\cdot \mathbf{r}_u=f(v)^2\sin^2 u+f(v)^2\cos^2u=f(v)^2,$$
+$$F(u,v)=\mathbf{r}_u\cdot \mathbf{r}_v=-f(v)f'(v)\sin u\cos u+f(v)f'(v)\sin u\cos u=0,$$
+$$G(u,v)=\mathbf{r}_v\cdot \mathbf{r}_v=f'(v)^2\cos^2 u+f'(v)^2\sin^2u+g'(v)^2=f'(v)^2+g'(v)^2.$$
+第一基本形式为
+$$I=E(u,v)(du)^2+2F(u,v)dudv+G(u,v)dv^2=f(v)^2(du)^2+(f'(v)^2+g'(v)^2)(dv)^2.$$
+
+\section{3.3/2}
+\begin{problem}
+  设球面的参考方程是
+  $$\mathbf{r}=\left(\frac{2au}{u^2+v^2+a^2},\frac{2av}{u^2+v^2+a^2},\frac{u^2+v^2-a^2}{u^2+v^2+a^2}\right),$$
+  求它的第一基本形式.
+\end{problem}
+
+$$\mathbf{r}_u(u,v)=\left(\frac{2 a \left(a^2-u^2+v^2\right)}{\left(a^2+u^2+v^2\right)^2},-\frac{4 a u v}{\left(a^2+u^2+v^2\right)^2},\frac{4 a^2 u}{\left(a^2+u^2+v^2\right)^2}\right),$$
+$$\mathbf{r}_v(u,v)=\left(-\frac{4 a u v}{\left(a^2+u^2+v^2\right)^2},\frac{2 a \left(a^2+u^2-v^2\right)}{\left(a^2+u^2+v^2\right)^2},\frac{4 a^2 v}{\left(a^2+u^2+v^2\right)^2}\right),$$
+$$E(u,v)=\mathbf{r}_u\cdot \mathbf{r}_u=\frac{16 a^4 u^2}{\left(a^2+u^2+v^2\right)^4}+\frac{16 a^2 u^2 v^2}{\left(a^2+u^2+v^2\right)^4}+\frac{4 a^2 \left(a^2-u^2+v^2\right)^2}{\left(a^2+u^2+v^2\right)^4}=\frac{4 a^2}{\left(a^2+u^2+v^2\right)^2},$$
+$$F(u,v)=\mathbf{r}_u\cdot \mathbf{r}_v=\frac{16 a^4 u v}{\left(a^2+u^2+v^2\right)^4}-\frac{8 a^2 u v \left(a^2+u^2-v^2\right)}{\left(a^2+u^2+v^2\right)^4}-\frac{8 a^2 u v \left(a^2-u^2+v^2\right)}{\left(a^2+u^2+v^2\right)^4}=0,$$
+$$G(u,v)=\mathbf{r}_v\cdot \mathbf{r}_v=\frac{16 a^4 v^2}{\left(a^2+u^2+v^2\right)^4}+\frac{16 a^2 u^2 v^2}{\left(a^2+u^2+v^2\right)^4}+\frac{4 a^2 \left(a^2+u^2-v^2\right)^2}{\left(a^2+u^2+v^2\right)^4}=\frac{4 a^2}{\left(a^2+u^2+v^2\right)^2}.$$
+第一基本形式为
+$$I=E(u,v)(du)^2+2F(u,v)dudv+G(u,v)dv^2=\frac{4 a^2}{\left(a^2+u^2+v^2\right)^2}(du)^2+\frac{4 a^2}{\left(a^2+u^2+v^2\right)^2}(dv)^2.$$
+
+
+
+\end{document}

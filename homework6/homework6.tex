@@ -1,0 +1,38 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma426}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{6}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section{4.1/1}
+\begin{problem}
+求下列曲线的第二基本形式:
+\begin{enumerate}
+  \item $\mathbf{r}=(a\cos\varphi\cos\theta,a\cos\varphi\sin\theta,b\sin\varphi)$(椭球面);
+\end{enumerate}
+\end{problem}
+
+\subsection*{(1)}
+在椭球面中$a,b>0$, $0<\varphi<\pi$, $0<\theta<2\pi$.
+$$\mathbf{r}_\varphi=(-a\sin\varphi\cos\theta,-a\sin\varphi\sin\theta,b\cos\varphi),$$
+$$\mathbf{r}_\theta=(-a\cos\varphi\sin\theta,a\cos\varphi\cos\theta,0),$$
+$$\mathbf{r}_\varphi\times\mathbf{r}_\theta=(-ab\cos^2\varphi\cos\theta,-ab\cos^2\varphi\sin\theta,-a^2\cos\varphi\sin\varphi),$$
+$$|\mathbf{r}_\varphi\times\mathbf{r}_\theta|=a\cos\varphi\sqrt{b^2\cos^2\varphi\cos^2\theta+b^2\cos^2\varphi\sin^2\theta+a^2\sin^2\varphi}=a\cos\varphi\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi},$$
+$$\mathbf{n}=\frac{\mathbf{r}_\varphi\times\mathbf{r}_\theta}{|\mathbf{r}_\varphi\times\mathbf{r}_\theta|}=\frac{1}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}}(-b\cos\varphi\cos\theta,-b\cos\varphi\sin\theta,-a\sin\varphi),$$
+$$\mathbf{r}_{\varphi\varphi}=(-a\cos\varphi\cos\theta,-a\cos\varphi\sin\theta,-b\sin\varphi),$$
+$$\mathbf{r}_{\varphi\theta}=(a\sin\varphi\sin\theta,-a\sin\varphi\cos\theta,0),$$
+$$\mathbf{r}_{\theta\theta}=(-a\cos\varphi\cos\theta,-a\cos\varphi\sin\theta,0),$$
+$$L=\mathbf{r}_{\varphi\varphi}\cdot\mathbf{n}=\frac{ab\cos^2\varphi\cos^2\theta+ab\cos^2\varphi\sin^2\theta+ab\sin^2\theta}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}}=\frac{ab}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}},$$
+$$M=\mathbf{r}_{\varphi\theta}\cdot\mathbf{n}=\frac{-ab\sin\varphi\cos\varphi\sin\theta\cos\theta+ab\sin\varphi\cos\varphi\sin\theta\cos\theta}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}}=0,$$
+$$N=\mathbf{r}_{\theta\theta}\cdot\mathbf{n}=\frac{ab\cos^2\varphi\cos^2\theta+ab\cos^2\varphi\sin^2\theta}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}}=\frac{ab\cos^2\varphi}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}}.$$
+第二基本形式为
+$$II=L(d\varphi^2)+2Md\varphi d\theta+N(d\theta)^2=\frac{ab(d\varphi^2)+ab\cos^2\varphi(d\theta)^2}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}}.$$
+
+\section{4.1/3}
+
+
+\end{document}

@@ -33,6 +33,25 @@ $$N=\mathbf{r}_{\theta\theta}\cdot\mathbf{n}=\frac{ab\cos^2\varphi\cos^2\theta+a
 $$II=L(d\varphi^2)+2Md\varphi d\theta+N(d\theta)^2=\frac{ab(d\varphi^2)+ab\cos^2\varphi(d\theta)^2}{\sqrt{a^2\sin^2\varphi+b^2\cos^2\varphi}}.$$
 
 \section{4.1/3}
+\begin{problem}
+求曲线$\mathbf{r}=\mathbf{r}(s)$的切线面的第二基本形式, 其中$s$是该曲线的弧长参数.
+\end{problem}
+$\mathbf{r}=\mathbf{r}(s)$的切线面方程为
+$$\mathbf{r}(s,t)=\mathbf{r}(s)+t\mathbf{r}'(s)=\mathbf{r}(s)+t\boldsymbol{\alpha}(s).$$
+故
+$$\mathbf{r}_s=\mathbf{r}_s(s,t)=\mathbf{r}'(s)+t\boldsymbol{\alpha}'(s)=\boldsymbol{\alpha}(s)+t\kappa(s)\boldsymbol{\beta}(s),$$
+$$\mathbf{r}_t=\mathbf{r}_t(s,t)=\boldsymbol{\alpha}(s),$$
+$$\mathbf{r}_s\times\mathbf{r}_t=(\boldsymbol{\alpha}(s)+t\kappa(s)\boldsymbol{\beta}(s))\times\boldsymbol{\alpha}(s)=t\kappa(s)\boldsymbol{\gamma}(s),$$
+$$|\mathbf{r}_s\times\mathbf{r}_t|=|t\kappa(s)\boldsymbol{\gamma}(s)|=t\kappa(s),$$
+$$\mathbf{n}=\frac{\mathbf{r}_s\times\mathbf{r}_t}{|\mathbf{r}_s\times\mathbf{r}_t|}=\frac{t\kappa(s)\boldsymbol{\gamma}(s)}{t\kappa(s)}=\boldsymbol{\gamma}(s),$$
+$$\mathbf{r}_{ss}=\boldsymbol{\alpha}'(s)+t\kappa'(s)\boldsymbol{\beta}(s)+t\kappa(s)\boldsymbol{\beta}'(s)=-t\kappa(s)^2\boldsymbol{\alpha}(s)+(\kappa(s)+t\kappa'(s))\boldsymbol{\beta}(s)+t\kappa(s)\tau(s)\boldsymbol{\gamma}(s),$$
+$$\mathbf{r}_{st}=\kappa(s)\boldsymbol{\beta}(s),$$
+$$\mathbf{r}_{tt}=0,$$
+$$L=\mathbf{r}_{ss}\cdot\mathbf{n}=-t\kappa(s)^2\boldsymbol{\alpha}(s)\boldsymbol{\gamma}(s)(\kappa(s)+t\kappa'(s))\boldsymbol{\beta}(s)\boldsymbol{\gamma}(s)+t\kappa(s)\tau(s)\boldsymbol{\gamma}(s)^2=t\kappa(s)\tau(s),$$
+$$M=\mathbf{r}_{st}\cdot\mathbf{n}=\kappa(s)\boldsymbol{\beta}(s)\boldsymbol{\gamma}(s)=0,$$
+$$M=\mathbf{r}_{tt}\cdot\mathbf{n}=0.$$
+第二基本形式为
+$$II=L(ds)^2+2Mdsdt+N(dt)^2=t\kappa(s)\tau(s)(ds)^2.$$
 
 
 \end{document}

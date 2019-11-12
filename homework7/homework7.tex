@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma426}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{7}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+
+\maketitle
+
+\section{4.2/1}
+
+\begin{problem}
+  设悬链面的方程是
+  $$\mathbf{r}=\left(\sqrt{u^2+a^2}\cos v,\sqrt{u^2+a^2}\sin v,a\log(u+\sqrt{u^2+a^2})\right),$$
+  求它的第一基本形式和第二基本形式, 并求它在点$(0,0)$处, 沿切向量$d\mathbf{r}=2\mathbf{r}_u+\mathbf{r}_v$的法曲率.
+\end{problem}
+
+$$\mathbf{r}_u(u,v)=\left(\frac{u \cos v}{\sqrt{u^2+a^2}},\frac{u \sin v}{\sqrt{u^2+a^2}},\frac{a}{\sqrt{u^2+a^2}}\right),$$
+$$\mathbf{r}_v(u,v)=\left(-\sqrt{u^2+a^2}\sin v,\sqrt{u^2+a^2}\cos v,0\right),$$
+$$E(u,v)=\mathbf{r}_u\cdot \mathbf{r}_u=\frac{u^2\cos^2v+u^2\sin^2v+a^2}{u^2+a^2}=1,$$
+$$F(u,v)=\mathbf{r}_u\cdot \mathbf{r}_v=-u\sin v\cos v+u\sin v\cos v=0,$$
+$$G(u,v)=\mathbf{r}_v\cdot \mathbf{r}_v=(u^2+a^2)\sin^2v+(u^2+a^2)\cos^2v=u^2+a^2.$$
+第一基本形式为
+$$I=E(u,v)(du)^2+2F(u,v)dudv+G(u,v)dv^2=(du)^2+(u^2+a^2)(dv)^2.$$
+$$\mathbf{r}_u\times\mathbf{r}_v=(-a\cos v,-a\sin v,u),$$
+$$|\mathbf{r}_u\times\mathbf{r}_v|=\sqrt{a^2\cos^2 v+a^2\sin^2 v+u^2}=\sqrt{u^2+a^2},$$
+$$\mathbf{n}(u,v)=\frac{\mathbf{r}_\varphi\times\mathbf{r}_\theta}{|\mathbf{r}_\varphi\times\mathbf{r}_\theta|}=\frac{1}{\sqrt{u^2+a^2}}(-a\cos v,-a\sin v,u),$$
+$$\mathbf{r}_{uu}(u,v)=\left(\frac{a^2 \cos v}{\left(u^2+a^2\right)^{3/2}},\frac{a^2 \sin v}{\left(u^2+a^2\right)^{3/2}},-\frac{a u}{\left(u^2+a^2\right)^{3/2}}\right),$$
+$$\mathbf{r}_{uv}(u,v)=\left(-\frac{u\sin v}{\sqrt{u^2+a^2}},\frac{u\cos v}{\sqrt{u^2+a^2}},0\right),$$
+$$\mathbf{r}_{vv}(u,v)=\left(-\sqrt{u^2+a^2}\cos v,-\sqrt{u^2+a^2}\sin v,0\right),$$
+$$L(u,v)=\mathbf{r}_{uu}\cdot\mathbf{n}=\frac{-a^3\cos^2v-a^3\sin^2v-au^2}{(u^2+a^2)^2}=-\frac{a}{u^2+a^2},$$
+$$M(u,v)=\mathbf{r}_{uv}\cdot\mathbf{n}=au\sin v\cos v-au\sin v\cos v=0,$$
+$$N(u,v)=\mathbf{r}_{vv}\cdot\mathbf{n}=a\cos^2v+a\sin^2v=a.$$
+第二基本形式为
+$$II=L(u,v)(du)^2+2M(u,v)dudv+N(u,v)(dv)^2=-\frac{a}{u^2+a^2}(du)^2+a(dv)^2.$$
+在$d\mathbf{r}=2\mathbf{r}_u+\mathbf{r}_v$上, $du=2dv$
+$$\kappa_n(u,v)=\frac{II}{I}=\frac{-\dfrac{a}{u^2+a^2}(du)^2+a(dv)^2}{(du)^2+(u^2+a^2)(dv)^2}=\frac{a(u^2+a^2-4)}{(u^2+a^2)(u^2+a^2+4)},$$
+$$\kappa_n(0,0)=\frac{a(a^2-4)}{a^2(a^2+4)}=\frac{a^2-4}{a(a^2+4)}.$$
+
+\section{4.2/5}
+\begin{problem}
+  求下列曲面上的已知曲线的法曲率:
+  \begin{enumerate}
+    \addtocounter{enumi}{4}
+    \item 曲面$\mathbf{r}=(u,v,kuv)$上的曲线$u=v^2$.
+  \end{enumerate}
+\end{problem}
+
+\subsection*{(5)}
+$$\mathbf{r}_u(u,v)=(1,0,kv),$$
+$$\mathbf{r}_v(u,v)=(0,1,ku),$$
+$$E(u,v)=\mathbf{r}_u\cdot \mathbf{r}_u=1+k^2v^2,$$
+$$F(u,v)=\mathbf{r}_u\cdot \mathbf{r}_v=k^2uv,$$
+$$G(u,v)=\mathbf{r}_v\cdot \mathbf{r}_v=1+k^2u^2.$$
+第一基本形式为
+$$I=E(u,v)(du)^2+2F(u,v)dudv+G(u,v)dv^2=(1+k^2v^2)(du)^2+2k^2uvdudv+(1+k^2u^2)(dv)^2.$$
+$$\mathbf{r}_u\times\mathbf{r}_v=(-kv,-ku,1),$$
+$$|\mathbf{r}_u\times\mathbf{r}_v|=\sqrt{1+k^2u^2+k^2v^2},$$
+$$\mathbf{n}(u,v)=\frac{\mathbf{r}_\varphi\times\mathbf{r}_\theta}{|\mathbf{r}_\varphi\times\mathbf{r}_\theta|}=\frac{1}{\sqrt{1+k^2u^2+k^2v^2}}(-kv,-ku,1),$$
+$$\mathbf{r}_{uu}(u,v)=(0,0,0),$$
+$$\mathbf{r}_{uv}(u,v)=(0,0,k),$$
+$$\mathbf{r}_{vv}(u,v)=(0,0,0),$$
+$$L(u,v)=\mathbf{r}_{uu}\cdot\mathbf{n}=0,$$
+$$M(u,v)=\mathbf{r}_{uv}\cdot\mathbf{n}=\frac{k}{\sqrt{1+k^2u^2+k^2v^2}},$$
+$$N(u,v)=\mathbf{r}_{vv}\cdot\mathbf{n}=0.$$
+第二基本形式为
+$$II=L(u,v)(du)^2+2M(u,v)dudv+N(u,v)(dv)^2=\frac{2k}{\sqrt{1+k^2u^2+k^2v^2}}dudv.$$
+在$u=v^2$上, $du=2vdv$
+\begin{align*}
+\kappa_n(u,v)=\frac{II}{I}
+&=\frac{\dfrac{2k}{\sqrt{1+k^2u^2+k^2v^2}}dudv}{(1+k^2v^2)(du)^2+2k^2uvdudv+(1+k^2u^2)(dv)^2}\\
+&=\frac{\dfrac{2k}{\sqrt{1+k^2v^4+k^2v^2}}2vdv\cdot dv}{(1+k^2v^2)(2vdv)^2+2k^2v^2\cdot v\cdot 2vdv\cdot dv+(1+k^2v^4)(dv)^2}\\
+&=\frac{4 k v}{\left(1+4v^2+9 k^2 v^4\right) \sqrt{1+k^2v^2+k^2v^4}}
+\end{align*}
+
+
+
+\end{document}

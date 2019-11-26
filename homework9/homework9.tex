@@ -1,0 +1,70 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma426}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{9}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+
+\maketitle
+
+\section{4.3/3}
+\begin{problem}
+求下列曲面的Guass曲率$K$和平均曲率$H$:
+\begin{enumerate}
+  \item $\mathbf{r}=(u\cos v,u\sin v,ku^2)$.
+\end{enumerate}
+\end{problem}
+
+$$\mathbf{r}_u(u,v)=(\cos v,\sin v,2ku),$$
+$$\mathbf{r}_v(u,v)=(-u\sin v,u\cos v,0),$$
+$$E(u,v)=\mathbf{r}_u\cdot \mathbf{r}_u=\cos^2u+\sin^2u+4k^2u^2=4k^2u^2+1,$$
+$$F(u,v)=\mathbf{r}_u\cdot \mathbf{r}_v=-u\sin v\cos v+u\sin v\cos v=0,$$
+$$G(u,v)=\mathbf{r}_v\cdot \mathbf{r}_v=u^2\sin^2v+u^2\cos^2v=u^2.$$
+$$\mathbf{r}_u\times\mathbf{r}_v=(-2ku^2\cos v,-2ku^2\sin v,u),$$
+$$|\mathbf{r}_u\times\mathbf{r}_v|=u\sqrt{4k^2u^2\cos^2v+4k^2u^2\sin^2v+1}=u\sqrt{4k^2u^2+1},$$
+$$\mathbf{n}(u,v)=\frac{\mathbf{r}_u\times\mathbf{r}_v}{|\mathbf{r}_u\times\mathbf{r}_v|}=\frac{1}{\sqrt{4k^2u^2+1}}(-2ku\cos v,-2ku\sin v,1),$$
+$$\mathbf{r}_{uu}(u,v)=(0,0,2k),$$
+$$\mathbf{r}_{uv}(u,v)=(-\sin v,\cos v,0),$$
+$$\mathbf{r}_{vv}(u,v)=(-u\cos v,-u\sin v,0),$$
+$$L(u,v)=\mathbf{r}_{uu}\cdot\mathbf{n}=\frac{2k}{\sqrt{4k^2u^2+1}},$$
+$$M(u,v)=\mathbf{r}_{uv}\cdot\mathbf{n}=\frac{2ku\sin v\cos v-2ku\sin v\cos v}{\sqrt{4k^2u^2+1}}=0,$$
+$$N(u,v)=\mathbf{r}_{vv}\cdot\mathbf{n}=\frac{2ku^2\cos^2 v+2ku^2\sin^2v}{\sqrt{4k^2u^2+1}}=\frac{2ku^2}{\sqrt{4k^2u^2+1}}.$$
+故Guass曲率$K$和平均曲率$H$为
+$$K=\frac{LN-M^2}{EG-F^2}=\frac{\dfrac{4k^2u^2}{4k^2u^2+1}}{u^2(4k^2u^2+1)}=\frac{4k^2}{(4k^2u^2+1)^2},$$
+$$H=\frac{LG-2MF+NE}{2(EG-F^2)}=\frac{\dfrac{2ku^2}{\sqrt{4k^2u^2+1}}+2ku^2\sqrt{4k^2u^2+1}}{2u^2(4k^2u^2+1)}=\frac{2k(2k^2u^2+1)}{(4k^2u^2+1)^{\frac{3}{2}}}.$$
+
+\section{4.3/4}
+\begin{problem}
+求双曲抛物面$\mathbf{r}=(a(u+v),b(u-v),2uv)$的Guass曲率$K$, 平均曲率$H$, 主曲率$\kappa_1$, $\kappa_2$和它们对应的主方向.
+\end{problem}
+
+$$\mathbf{r}_u(u,v)=(a,b,2v),$$
+$$\mathbf{r}_v(u,v)=(a,-b,2u),$$
+$$E(u,v)=\mathbf{r}_u\cdot \mathbf{r}_u=a^2+b^2+4v^2,$$
+$$F(u,v)=\mathbf{r}_u\cdot \mathbf{r}_v=a^2-b^2+4uv,$$
+$$G(u,v)=\mathbf{r}_v\cdot \mathbf{r}_v=a^2+b^2+4u^2.$$
+$$\mathbf{r}_u\times\mathbf{r}_v=(2b(u+v),-2a(u-v),-2ab),$$
+$$|\mathbf{r}_u\times\mathbf{r}_v|=2\sqrt{b^2(u+v)^2+a^2(u-v)^2+a^2b^2},$$
+$$\mathbf{n}(u,v)=\frac{\mathbf{r}_u\times\mathbf{r}_v}{|\mathbf{r}_u\times\mathbf{r}_v|}=\frac{1}{\sqrt{b^2(u+v)^2+a^2(u-v)^2+a^2b^2}}(b(u+v),-a(u-v),-ab),$$
+$$\mathbf{r}_{uu}(u,v)=(0,0,0),$$
+$$\mathbf{r}_{uv}(u,v)=(0,0,2),$$
+$$\mathbf{r}_{vv}(u,v)=(0,0,0),$$
+$$L(u,v)=\mathbf{r}_{uu}\cdot\mathbf{n}=0,$$
+$$M(u,v)=\mathbf{r}_{uv}\cdot\mathbf{n}=-\frac{2ab}{\sqrt{b^2(u+v)^2+a^2(u-v)^2+a^2b^2}},$$
+$$N(u,v)=\mathbf{r}_{vv}\cdot\mathbf{n}=0.$$
+故Guass曲率$K$和平均曲率$H$为
+$$EG-F^2=(a^2+b^2+4v^2)(a^2+b^2+4u^2)-(a^2-b^2+4uv)^2=4[b^2(u+v)^2+a^2(u-v)^2+a^2b^2],$$
+$$K=\frac{LN-M^2}{EG-F^2}=-\frac{M^2}{EG-F^2}=-\frac{a^2b^2}{[b^2(u+v)^2+a^2(u-v)^2+a^2b^2]^2},$$
+$$H=\frac{LG-2MF+NE}{2(EG-F^2)}=-\frac{MF}{EG-F^2}=\frac{ab(a^2-b^2+4uv)}{2[b^2(u+v)^2+a^2(u-v)^2+a^2b^2]^{\frac{3}{2}}}.$$
+主曲率$\kappa_1$, $\kappa_2$为
+$$\sqrt{H^2-K}=\sqrt{\frac{M^2F^2}{(EG-F^2)^2}+\frac{M^2}{EG-F^2}}=\frac{M}{EG-F^2}\sqrt{EG},$$
+$$\kappa_1=H+\sqrt{H^2-K}=-\frac{M(F-\sqrt{EG})}{EG-F^2}=-\frac{ab\left[a^2-b^2+4uv-\sqrt{(a^2+b^2+4v^2)(a^2+b^2+4u^2)}\right]}{2[b^2(u+v)^2+a^2(u-v)^2+a^2b^2]^{\frac{3}{2}}},$$
+$$\kappa_2=H-\sqrt{H^2-K}=-\frac{M(F+\sqrt{EG})}{EG-F^2}=-\frac{ab\left[a^2-b^2+4uv+\sqrt{(a^2+b^2+4v^2)(a^2+b^2+4u^2)}\right]}{2[b^2(u+v)^2+a^2(u-v)^2+a^2b^2]^{\frac{3}{2}}}.$$
+相对于$\kappa_1$的主方向为
+$$\frac{du}{dv}=-\frac{M-\kappa_1 F}{L-\kappa_1 E}=-\frac{F}{E}+\frac{1}{\kappa_1}\frac{M}{E}=-\frac{F}{E}+\frac{F+\sqrt{EG}}{M}\frac{M}{E}=\sqrt{\frac{G}{E}}=\sqrt{\frac{a^2+b^2+4u^2}{a^2+b^2+4v^2}}.$$
+相对于$\kappa_2$的主方向为
+$$\frac{du}{dv}=-\frac{M-\kappa_2 F}{L-\kappa_2 E}=-\frac{F}{E}+\frac{1}{\kappa_2}\frac{M}{E}=-\frac{F}{E}+\frac{F-\sqrt{EG}}{M}\frac{M}{E}=-\sqrt{\frac{G}{E}}=-\sqrt{\frac{a^2+b^2+4u^2}{a^2+b^2+4v^2}}.$$
+
+\end{document}

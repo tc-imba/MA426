@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma426}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{8}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+
+\maketitle
+
+\section{4.2/6}
+\begin{problem}
+求下列曲面上的渐进曲线:
+\begin{enumerate}
+  \addtocounter{enumi}{1}
+  \item 双曲抛物面: $\mathbf{r}=\left(\dfrac{u+v}{2},\dfrac{u-v}{2},uv\right)$.
+\end{enumerate}
+\end{problem}
+
+\subsection*{(2)}
+$$\mathbf{r}_u(u,v)=\left(\frac{1}{2},\frac{1}{2},v\right),$$
+$$\mathbf{r}_v(u,v)=\left(\frac{1}{2},-\frac{1}{2},u\right),$$
+$$\mathbf{r}_u\times\mathbf{r}_v=\left(\frac{u+v}{2},-\frac{u-v}{2},-\frac{1}{2}\right),$$
+$$|\mathbf{r}_u\times\mathbf{r}_v|=\sqrt{\frac{1}{4}(u+v)^2+\frac{1}{4}(u-v)^2+\frac{1}{4}}=\frac{\sqrt{2u^2+2v^2+1}}{2},$$
+$$\mathbf{n}(u,v)=\frac{\mathbf{r}_u\times\mathbf{r}_v}{|\mathbf{r}_u\times\mathbf{r}_v|}=\frac{1}{\sqrt{2u^2+2v^2+1}}(u+v,v-u,-1),$$
+$$\mathbf{r}_{uu}(u,v)=(0,0,0),$$
+$$\mathbf{r}_{uv}(u,v)=(0,0,1),$$
+$$\mathbf{r}_{vv}(u,v)=(0,0,0),$$
+$$L(u,v)=\mathbf{r}_{uu}\cdot\mathbf{n}=0,$$
+$$M(u,v)=\mathbf{r}_{uv}\cdot\mathbf{n}=-\frac{1}{\sqrt{2u^2+2v^2+1}},$$
+$$N(u,v)=\mathbf{r}_{vv}\cdot\mathbf{n}=0.$$
+第二基本形式为
+$$II=L(u,v)(du)^2+2M(u,v)dudv+N(u,v)(dv)^2=-\frac{1}{\sqrt{2u^2+2v^2+1}}dudv.$$
+$II=0$的解为$du=0$或$dv=0,$
+故渐进曲线为$u=u_0$和$v=v_0$.
+
+\section*{定理 4.3.2}
+\begin{problem}
+Weingarten 映射$W$是从切空间$T_pS$到它自身的自共轭映射, 即对于曲面$S$在点$u,v$的任意两个切方向$d\mathbf{r}$和$\delta\mathbf{r}$, 下面的公式
+$$W(d\mathbf{r})\cdot\delta\mathbf{r}=d\mathbf{r}\cdot W(\delta\mathbf{r})$$
+成立.
+\end{problem}
+设
+$$d\mathbf{r}=\mathbf{r}_udu+\mathbf{r}vdv,\quad \delta\mathbf{r}=\mathbf{r}_u\delta u+\mathbf{r}_v\delta v.$$
+则
+$$W(d\mathbf{r})=-(\mathbf{n}_udu+\mathbf{n}_vdv),\quad W(\delta\mathbf{r})=-(\mathbf{n}_u\delta u+\mathbf{n}_v\delta v).$$
+\begin{align*}
+  W(d\mathbf{r})\cdot\delta\mathbf{r}
+   & =-(\mathbf{n}_udu+\mathbf{n}_vdv)\cdot(\mathbf{r}_u\delta u+\mathbf{r}_v\delta v) \\
+   & =Ldu\delta u+M(du\delta v+dv\delta u)+Ndv\delta v                                 \\
+   & =(\mathbf{r}_udu+\mathbf{r}vdv)\cdot-(\mathbf{n}_u\delta u+\mathbf{n}_v\delta v)  \\
+   & =d\mathbf{r}\cdot W(\delta\mathbf{r}).
+\end{align*}
+
+\section{4.3/4}
+\begin{problem}
+证明: 曲面$S$上任意一点$p$的某个邻域内都有正交参数系$(u,v)$, 使得参数曲线在点$p$处的切方向是曲面$S$在该点的两个彼此正交的主方向.
+\end{problem}
+设曲面$S$的正交参数系为$(u,v)$, 则在点$p(u_0,v_0)$处的两个正交的主方向单位向量为
+$$\mathbf{e}_1=\xi_1\mathbf{r}_u(u_0,v_0)+\eta_1\mathbf{r}_v(u_0,v_0),$$
+$$\mathbf{e}_2=\xi_2\mathbf{r}_u(u_0,v_0)+\eta_2\mathbf{r}_v(u_0,v_0).$$
+现只需找到变换$T:(u,v)\longrightarrow(u',v')$使得$\mathbf{r}_{u'}(u_0,v_0)=\mathbf{e}_1$, $\mathbf{r}_{v'}(u_0,v_0)=\mathbf{e}_2$. 令
+$$T:\quad u=\xi_1u'+\xi_2v',\quad v=\eta_1u'+\eta_2v',$$
+$$\frac{\partial(u,v)}{\partial(u',v')}=
+  \begin{vmatrix}
+    \dfrac{\partial u}{\partial u'} & \dfrac{\partial v}{\partial u'} \\
+    \dfrac{\partial u}{\partial v'} & \dfrac{\partial v}{\partial v'}
+  \end{vmatrix}=\begin{vmatrix}
+    \xi_1 & \eta_1 \\ \xi_2 & \eta_2
+  \end{vmatrix}\neq0,$$
+$$\mathbf{r}_{u'}=\frac{\partial u}{\partial u'}\mathbf{r}_u(u_0,v_0)+\frac{\partial v}{\partial u'}\mathbf{r}_v(u_0,v_0)=\xi_1\mathbf{r}_u(u_0,v_0)+\eta_1\mathbf{r}_v(u_0,v_0)=\mathbf{e}_1,$$
+$$\mathbf{r}_{v'}=\frac{\partial u}{\partial v'}\mathbf{r}_u(u_0,v_0)+\frac{\partial v}{\partial v'}\mathbf{r}_v(u_0,v_0)=\xi_2\mathbf{r}_u(u_0,v_0)+\eta_2\mathbf{r}_v(u_0,v_0)=\mathbf{e}_2.$$
+故变换成立, $(u',v')$即为需证的正交参数系.
+
+\end{document}
